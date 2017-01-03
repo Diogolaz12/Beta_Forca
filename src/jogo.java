@@ -63,7 +63,11 @@ public class jogo extends JFrame {
 		btnBtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
+<<<<<<< HEAD
 				Verificar(txtLetra, lbl_cabeca,  lbl_tronco, lbl_pernas,  lbl_Palavra);
+=======
+				Principal.Verificar( txtLetra, lbl_cabeca, lbl_tronco, lbl_pernas, lbl_Palavra);
+>>>>>>> branch 'master' of https://github.com/Adraythien/Beta_Forca.git
 			}
 		});
 		btnBtn.setBounds(146, 41, 81, 37);
