@@ -12,6 +12,7 @@ import javax.swing.JTextField;
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
+import javax.swing.ImageIcon;
 
 public class jogo extends JFrame {
 
@@ -40,32 +41,18 @@ public class jogo extends JFrame {
 	public jogo() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 478, 398);
-		
-		JMenuBar menuBar = new JMenuBar();
-		setJMenuBar(menuBar);
-		
-		JMenu mnNewMenu = new JMenu("New menu");
-		menuBar.add(mnNewMenu);
-		
-		JMenuItem mntmNewMenuItem = new JMenuItem("New menu item");
-		mnNewMenu.add(mntmNewMenuItem);
-		
-		JMenuItem mntmNewMenuItem_1 = new JMenuItem("New menu item");
-		mnNewMenu.add(mntmNewMenuItem_1);
-		
-		JMenuItem mntmNewMenuItem_2 = new JMenuItem("New menu item");
-		mnNewMenu.add(mntmNewMenuItem_2);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
 		JLabel lblimage = new JLabel("New label");
-		lblimage.setBounds(300, 132, 46, 14);
+		lblimage.setIcon(new ImageIcon(jogo.class.getResource("/images/forca.PNG")));
+		lblimage.setBounds(10, 86, 231, 274);
 		contentPane.add(lblimage);
 		
 		JButton btnBtn = new JButton("BTN");
-		btnBtn.setBounds(172, 74, 81, 37);
+		btnBtn.setBounds(172, 48, 81, 37);
 		contentPane.add(btnBtn);
 		
 		textField = new JTextField();
