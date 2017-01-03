@@ -22,7 +22,9 @@ public class jogo extends JFrame {
 	private JTextField textField;
 	private static JLabel lbl_Palavra;
 	private JButton btnBtn ;
-	private JLabel lblimage;
+	private JLabel lbl_forca;
+	private JLabel lbl_tronco;
+	private JLabel lbl_pernas;
 
 	/**
 	 * Launch the application.
@@ -51,10 +53,10 @@ public class jogo extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		lblimage = new JLabel("New label");
-		lblimage.setIcon(new ImageIcon(jogo.class.getResource("/images/forca.PNG")));
-		lblimage.setBounds(10, 86, 231, 274);
-		contentPane.add(lblimage);
+		lbl_forca = new JLabel("");
+		lbl_forca.setIcon(new ImageIcon(jogo.class.getResource("/images/forca.PNG")));
+		lbl_forca.setBounds(12, 86, 231, 274);
+		contentPane.add(lbl_forca);
 		
 		btnBtn = new JButton("BTN");
 		btnBtn.addActionListener(new ActionListener() {
@@ -69,13 +71,25 @@ public class jogo extends JFrame {
 		contentPane.add(textField);
 		textField.setColumns(10);
 		
-		lbl_Palavra = new JLabel("cfgbhc");
+		lbl_Palavra = new JLabel("");
 		lbl_Palavra.setBounds(268, 86, 154, 27);
 		contentPane.add(lbl_Palavra);
 		
 		Principal.Gerar(lbl_Palavra);
+		
+		JLabel lbl_cabeca = new JLabel("");
+		lbl_cabeca.setIcon(new ImageIcon(jogo.class.getResource("/images/head.png")));
+		lbl_cabeca.setBounds(170, 150, 57, 53);
+		contentPane.add(lbl_cabeca);
+		
+		lbl_tronco = new JLabel("");
+		lbl_tronco.setIcon(new ImageIcon(jogo.class.getResource("/images/chest.png")));
+		lbl_tronco.setBounds(162, 196, 81, 42);
+		contentPane.add(lbl_tronco);
+		
+		lbl_pernas = new JLabel("New label");
+		lbl_pernas.setIcon(new ImageIcon(jogo.class.getResource("/images/legs.png")));
+		lbl_pernas.setBounds(170, 237, 56, 53);
+		contentPane.add(lbl_pernas);
 	}
-	
-	
-	
 }
