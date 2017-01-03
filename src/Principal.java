@@ -2,30 +2,18 @@ import java.awt.event.ActionEvent;
 import java.util.ArrayList;
 import java.util.Random;
 
-import javax.swing.JButton;
 import javax.swing.JLabel;
 
-public class main {
+public class Principal {
 
 	String[] listaPalavras = {"Software","Engenharia","Linux", "Processador","RAM","Penacova"};
 	String letra;
 	Random gerarpalavra = new Random();
-	String palavra1;
-	int lenght = palavra1.length();
+	static String palavra1;
+	static int lenght = palavra1.length();
 	ArrayList<String> Errou = new ArrayList<>();
 
 
-	
-	
-	public void GerarGuess(JLabel lbl_Palavra)
-	{
-		for (int i=0;i<lenght ;i++){
-		
-		lbl_Palavra.setText(lbl_Palavra.getText()+" _ ");
-		
-	}
-}
-	
 	public void Verificar(ActionEvent e){
 		
 		
@@ -46,5 +34,14 @@ public class main {
 		palavra1=listaPalavras[palavragerada];
 		return palavra1;
 	}
-	
+
+	public static void GerarGuess(JLabel lbl_Palavra) {
+		for (int i=0;i<lenght ;i++){
+			
+			
+			lbl_Palavra.setText(lbl_Palavra.getText()+" _ ");
+			
+		}
+		
+	}
 }

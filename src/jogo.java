@@ -7,6 +7,8 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.Random;
 import java.awt.event.ActionEvent;
 import javax.swing.JTextField;
 import javax.swing.JMenuBar;
@@ -18,6 +20,7 @@ public class jogo extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField textField;
+	private static JLabel lbl_Palavra;
 
 	/**
 	 * Launch the application.
@@ -52,12 +55,61 @@ public class jogo extends JFrame {
 		contentPane.add(lblimage);
 		
 		JButton btnBtn = new JButton("BTN");
-		btnBtn.setBounds(172, 48, 81, 37);
+		btnBtn.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				GerarGuess();
+			}
+		});
+		btnBtn.setBounds(146, 41, 81, 37);
 		contentPane.add(btnBtn);
 		
 		textField = new JTextField();
-		textField.setBounds(0, 0, 452, 50);
+		textField.setBounds(94, 46, 40, 27);
 		contentPane.add(textField);
 		textField.setColumns(10);
+		
+		lbl_Palavra = new JLabel("");
+		lbl_Palavra.setBounds(264, 168, 154, 27);
+		contentPane.add(lbl_Palavra);
+	}
+	
+	String[] listaPalavras = {"Software","Engenharia","Linux", "Processador","RAM","Penacova"};
+	String letra;
+	Random gerarpalavra = new Random();
+	String palavra1;
+	int lenght = palavra1.length();
+	ArrayList<String> Errou = new ArrayList<>();
+
+
+	/*public void Verificar(ActionEvent e){
+		
+		
+		
+		if( palavra1.contains(btnname)){
+			//Label recebe a letra
+		}
+		else{
+			//Vai aparecer cabeça e o caraças			
+			Errou.add(btnname);
+		}
+	}*/
+	
+	
+	public String Gerar(){
+				
+		int palavragerada= gerarpalavra.nextInt(listaPalavras.length);
+		palavra1=listaPalavras[palavragerada];
+		return palavra1;
+	}
+
+	public static void GerarGuess() {
+		-gera
+		for (int i=0;i<lenght ;i++){
+			
+			
+			lbl_Palavra.setText(lbl_Palavra.getText()+" _ ");
+			
+		}
+		
 	}
 }
