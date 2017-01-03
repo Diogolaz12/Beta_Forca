@@ -19,7 +19,7 @@ import javax.swing.ImageIcon;
 public class jogo extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField textField;
+	private JTextField txtLetra;
 	private static JLabel lbl_Palavra;
 	private JButton btnBtn ;
 	private JLabel lbl_forca;
@@ -66,10 +66,10 @@ public class jogo extends JFrame {
 		btnBtn.setBounds(146, 41, 81, 37);
 		contentPane.add(btnBtn);
 		
-		textField = new JTextField();
-		textField.setBounds(94, 46, 40, 27);
-		contentPane.add(textField);
-		textField.setColumns(10);
+		txtLetra = new JTextField();
+		txtLetra.setBounds(94, 46, 40, 27);
+		contentPane.add(txtLetra);
+		txtLetra.setColumns(10);
 		
 		lbl_Palavra = new JLabel("");
 		lbl_Palavra.setBounds(268, 86, 154, 27);
@@ -84,7 +84,7 @@ public class jogo extends JFrame {
 		
 		lbl_tronco = new JLabel("");
 		lbl_tronco.setIcon(new ImageIcon(jogo.class.getResource("/images/chest.png")));
-		lbl_tronco.setBounds(162, 196, 81, 42);
+		lbl_tronco.setBounds(156, 195, 81, 42);
 		contentPane.add(lbl_tronco);
 		
 		lbl_pernas = new JLabel("");
