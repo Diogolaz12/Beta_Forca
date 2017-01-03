@@ -1,4 +1,4 @@
-import java.awt.event.ActionEvent;
+
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -6,15 +6,15 @@ import javax.swing.JLabel;
 
 public class Principal {
 
-	String[] listaPalavras = {"Software","Engenharia","Linux", "Processador","RAM","Penacova"};
+	static String[] listaPalavras = {"Software","Engenharia","Linux", "Processador","RAM","Penacova"};
 	String letra;
-	Random gerarpalavra = new Random();
+	static Random gerarpalavra = new Random();
 	static String palavra1;
-	static int lenght = palavra1.length();
+	
 	ArrayList<String> Errou = new ArrayList<>();
 
 
-	public void Verificar(ActionEvent e){
+	/*public void Verificar(ActionEvent e){
 		
 		
 		
@@ -25,17 +25,16 @@ public class Principal {
 			//Vai aparecer cabeça e o caraças			
 			Errou.add(btnname);
 		}
-	}
+	}*/
 	
 	
-	public String Gerar(){
+	public static void Gerar(JLabel lbl_Palavra){
 				
+		
 		int palavragerada= gerarpalavra.nextInt(listaPalavras.length);
 		palavra1=listaPalavras[palavragerada];
-		return palavra1;
-	}
-
-	public static void GerarGuess(JLabel lbl_Palavra) {
+		System.out.println(palavra1);
+		int lenght = palavra1.length();
 		for (int i=0;i<lenght ;i++){
 			
 			
@@ -44,4 +43,5 @@ public class Principal {
 		}
 		
 	}
+
 }

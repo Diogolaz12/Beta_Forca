@@ -21,6 +21,8 @@ public class jogo extends JFrame {
 	private JPanel contentPane;
 	private JTextField textField;
 	private static JLabel lbl_Palavra;
+	private JButton btnBtn ;
+	private JLabel lblimage;
 
 	/**
 	 * Launch the application.
@@ -49,15 +51,14 @@ public class jogo extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblimage = new JLabel("New label");
+		lblimage = new JLabel("New label");
 		lblimage.setIcon(new ImageIcon(jogo.class.getResource("/images/forca.PNG")));
 		lblimage.setBounds(10, 86, 231, 274);
 		contentPane.add(lblimage);
 		
-		JButton btnBtn = new JButton("BTN");
+		btnBtn = new JButton("BTN");
 		btnBtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				GerarGuess();
 			}
 		});
 		btnBtn.setBounds(146, 41, 81, 37);
@@ -68,48 +69,13 @@ public class jogo extends JFrame {
 		contentPane.add(textField);
 		textField.setColumns(10);
 		
-		lbl_Palavra = new JLabel("");
-		lbl_Palavra.setBounds(264, 168, 154, 27);
+		lbl_Palavra = new JLabel("cfgbhc");
+		lbl_Palavra.setBounds(268, 86, 154, 27);
 		contentPane.add(lbl_Palavra);
+		
+		Principal.Gerar(lbl_Palavra);
 	}
 	
-	String[] listaPalavras = {"Software","Engenharia","Linux", "Processador","RAM","Penacova"};
-	String letra;
-	Random gerarpalavra = new Random();
-	String palavra1;
-	int lenght = palavra1.length();
-	ArrayList<String> Errou = new ArrayList<>();
-
-
-	/*public void Verificar(ActionEvent e){
-		
-		
-		
-		if( palavra1.contains(btnname)){
-			//Label recebe a letra
-		}
-		else{
-			//Vai aparecer cabeça e o caraças			
-			Errou.add(btnname);
-		}
-	}*/
 	
 	
-	public String Gerar(){
-				
-		int palavragerada= gerarpalavra.nextInt(listaPalavras.length);
-		palavra1=listaPalavras[palavragerada];
-		return palavra1;
-	}
-
-	public static void GerarGuess() {
-		-gera
-		for (int i=0;i<lenght ;i++){
-			
-			
-			lbl_Palavra.setText(lbl_Palavra.getText()+" _ ");
-			
-		}
-		
-	}
 }
