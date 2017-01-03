@@ -91,6 +91,11 @@ public class Principal {
 		
 		
 	}
+	public void Preencher()
+	
+	{
+
+	}
 	
 	
 	public static void Gerar(JLabel lbl_Palavra){

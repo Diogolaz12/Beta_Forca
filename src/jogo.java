@@ -25,6 +25,7 @@ public class jogo extends JFrame {
 	private JLabel lbl_forca;
 	private JLabel lbl_tronco;
 	private JLabel lbl_pernas;
+	private JLabel lbl_cabeca;
 
 	/**
 	 * Launch the application.
@@ -61,6 +62,8 @@ public class jogo extends JFrame {
 		btnBtn = new JButton("BTN");
 		btnBtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				
+				Verificar( txtLetra, lbl_cabeca, lbl_tronco, lbl_pernas, lbl_Palavra);
 			}
 		});
 		btnBtn.setBounds(146, 41, 81, 37);
@@ -77,7 +80,7 @@ public class jogo extends JFrame {
 		
 		Principal.Gerar(lbl_Palavra);
 		
-		JLabel lbl_cabeca = new JLabel("");
+		lbl_cabeca = new JLabel("");
 		lbl_cabeca.setIcon(new ImageIcon(jogo.class.getResource("/images/head.png")));
 		lbl_cabeca.setBounds(170, 150, 57, 53);
 		contentPane.add(lbl_cabeca);
