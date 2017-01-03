@@ -63,7 +63,7 @@ public class jogo extends JFrame {
 		btnBtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
-				Verificar( txtLetra, lbl_cabeca, lbl_tronco, lbl_pernas, lbl_Palavra);
+				Verificar(txtLetra, lbl_cabeca,  lbl_tronco, lbl_pernas,  lbl_Palavra);
 			}
 		});
 		btnBtn.setBounds(146, 41, 81, 37);

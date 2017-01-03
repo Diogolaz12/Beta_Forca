@@ -20,15 +20,16 @@ public class Principal {
 	ArrayList<String> TodasLetras = new ArrayList<>();
 	
 
-	public void Verificar(JTextField txtLetra,JLabel cabeca,JLabel tronco,JLabel pernas,JLabel palavra){
+	public void Verificar(JTextField txtLetra,JLabel cabeca,JLabel tronco,JLabel pernas, JLabel lbl_Palavra){
 		String word = txtLetra.getText();
+
 		
 		if(!(TodasLetras.contains(txtLetra.getText())) && txtLetra.getText()!=""){
 			
 			//Se for palavra
 			if(word.length()>1){
 				if(word==palavraGerada){
-					palavra.setText(palavraGerada);
+					lbl_Palavra.setText(palavraGerada);
 					System.out.println("Parabens,ganhou!");
 					//Palavras iguais, label fica com a palavra completa
 					Ganhar(); // Verifica se perde
@@ -42,8 +43,11 @@ public class Principal {
 			
 			// Se for só uma letra
 			else{
+				for (int i=0;i<palavraGerada.length() ;i++){
 				if( palavraGerada.contains(txtLetra.getText())){
 					TodasLetras.add(txtLetra.getText());
+					lbl_Palavra.setText(lbl_Palavra.getText()+ txtLetra.getText());
+					
 					/*
 					 * 
 					 * Mete aqui o codigo, para meter as letras para a label,tudo o resto, está bom I guess - David
@@ -53,7 +57,7 @@ public class Principal {
 					 */
 					letrasCertas++;
 					Ganhar(); // Verifica se perde
-					
+				
 				}
 				else{
 					TodasLetras.add(txtLetra.getText());
@@ -62,6 +66,7 @@ public class Principal {
 					Ganhar(); // Verifica se ganha
 				}
 			}
+		}
 		}
 	}
 	
@@ -91,11 +96,23 @@ public class Principal {
 		
 		
 	}
-	public void Preencher()
+	/*public static void Preencher(JTextField txtLetra, JLabel lbl_Palavra)
 	
 	{
-
-	}
+		char letter = 0;
+		int i = 0;
+		while(palavraGerada.indexOf(i, letter) != -1) {
+		   i = palavraGerada.indexOf(i, letter) + 1;
+		   //Do whatever
+		}
+		if(txtLetra.getText().charAt(0) == letter)
+		{
+			
+		}
+		if(i == 0) {
+		   //Handle missed letter 
+		}
+	}*/
 	
 	
 	public static void Gerar(JLabel lbl_Palavra){
