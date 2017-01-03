@@ -13,14 +13,14 @@ public class Principal {
 	static String palavraGerada;
 	
 	
-	int letrasErradas=0;
-	int letrasCertas=0;
+	static int letrasErradas=0;
+	static int letrasCertas=0;
 	
 	
-	ArrayList<String> TodasLetras = new ArrayList<>();
+	static ArrayList<String> TodasLetras = new ArrayList<>();
 	
 
-	public void Verificar(JTextField txtLetra,JLabel cabeca,JLabel tronco,JLabel pernas,JLabel palavra){
+	public static void Verificar(JTextField txtLetra,JLabel cabeca,JLabel tronco,JLabel pernas,JLabel palavra){
 		String word = txtLetra.getText();
 		
 		if(!(TodasLetras.contains(txtLetra.getText())) && txtLetra.getText()!=""){
@@ -66,7 +66,7 @@ public class Principal {
 	}
 	
 	
-	public void Vivo(JLabel cabeca,JLabel tronco,JLabel pernas){
+	public static void Vivo(JLabel cabeca,JLabel tronco,JLabel pernas){
 		if(letrasErradas==1){
 			cabeca.setVisible(true);
 		}
@@ -83,7 +83,7 @@ public class Principal {
 	}
 	
 	
-	public void Ganhar(){
+	public static void Ganhar(){
 		
 		//Para o Sérgio
 		
