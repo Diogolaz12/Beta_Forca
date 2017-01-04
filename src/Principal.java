@@ -60,9 +60,15 @@ public class Principal {
 					 * 
 					 * 
 					 */
+				
+				
+				}
+				
+			}
+				if(palavraGerada.contains(txtLetra.getText()))
+				{
 					letrasCertas++;
 					Ganhar(); // Verifica se perde
-				
 				}
 				else{
 					TodasLetras.add(txtLetra.getText());
@@ -71,7 +77,6 @@ public class Principal {
 					Vivo(cabeca,tronco,pernas);
 					Ganhar(); // Verifica se ganha
 				}
-			}
 		}
 		}
 	}
