@@ -83,16 +83,19 @@ public class jogo extends JFrame {
 		Principal.Gerar(lbl_Palavra);
 		
 		lbl_cabeca = new JLabel("");
+		lbl_cabeca.setVisible(false);
 		lbl_cabeca.setIcon(new ImageIcon(jogo.class.getResource("/images/head.png")));
 		lbl_cabeca.setBounds(170, 150, 57, 53);
 		contentPane.add(lbl_cabeca);
 		
 		lbl_tronco = new JLabel("");
+		lbl_tronco.setVisible(false);
 		lbl_tronco.setIcon(new ImageIcon(jogo.class.getResource("/images/chest.png")));
 		lbl_tronco.setBounds(156, 195, 81, 42);
 		contentPane.add(lbl_tronco);
 		
 		lbl_pernas = new JLabel("");
+		lbl_pernas.setVisible(false);
 		lbl_pernas.setIcon(new ImageIcon(jogo.class.getResource("/images/legs.png")));
 		lbl_pernas.setBounds(170, 237, 56, 53);
 		contentPane.add(lbl_pernas);

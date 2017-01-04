@@ -60,6 +60,14 @@ public class Principal {
 					 * 
 					 * 
 					 */
+					
+				
+				}
+				
+	
+				
+			}
+				if(palavraGerada.contains(txtLetra.getText())){
 					letrasCertas++;
 					Ganhar(); // Verifica se perde
 				
@@ -67,23 +75,23 @@ public class Principal {
 				else{
 					TodasLetras.add(txtLetra.getText());
 					letrasErradas++;
+					System.out.println(letrasErradas);
 					Vivo(cabeca,tronco,pernas);
 					Ganhar(); // Verifica se ganha
 				}
-			}
 		}
 		}
 	}
 	
 	
 	public static void Vivo(JLabel cabeca,JLabel tronco,JLabel pernas){
-		if(letrasErradas==1){
+		if(letrasErradas==3){
 			cabeca.setVisible(true);
 		}
 		else if(letrasErradas==2){
 			tronco.setVisible(true);
 		}
-		else if(letrasErradas==3){
+		else if(letrasErradas==1){
 			pernas.setVisible(true);
 		}
 		/*
@@ -135,7 +143,7 @@ public class Principal {
 		int lenght = palavraGerada.length();
 		for (int i=0;i<lenght ;i++){
 			
-			lbl_Palavra.setText(lbl_Palavra.getText()+"_");
+			lbl_Palavra.setText(lbl_Palavra.getText()+"_ ");
 			
 		}
 		
