@@ -20,11 +20,9 @@ public class Principal {
 	static ArrayList<String> TodasLetras = new ArrayList<>();
 	
 
-<<<<<<< HEAD
-	public void Verificar(JTextField txtLetra,JLabel cabeca,JLabel tronco,JLabel pernas, JLabel lbl_Palavra){
-=======
-	public static void Verificar(JTextField txtLetra,JLabel cabeca,JLabel tronco,JLabel pernas,JLabel palavra){
->>>>>>> branch 'master' of https://github.com/Adraythien/Beta_Forca.git
+
+	public static void Verificar(JTextField txtLetra,JLabel cabeca,JLabel tronco,JLabel pernas,JLabel lbl_Palavra){
+
 		String word = txtLetra.getText();
 
 		
@@ -47,11 +45,14 @@ public class Principal {
 			
 			// Se for só uma letra
 			else{
+				StringBuilder sb = new StringBuilder(palavraGerada);
+				char letter = txtLetra.getText().charAt(0);
 				for (int i=0;i<palavraGerada.length() ;i++){
-				if( palavraGerada.contains(txtLetra.getText())){
-					TodasLetras.add(txtLetra.getText());
-					lbl_Palavra.setText(lbl_Palavra.getText()+ txtLetra.getText());
+
+				if(palavraGerada.charAt(i) ==txtLetra.getText().charAt(0)){
 					
+
+					lbl_Palavra.setText(lbl_Palavra.getText().substring(0,i)+ palavraGerada.charAt(i) + lbl_Palavra.getText().substring(i+1));
 					/*
 					 * 
 					 * Mete aqui o codigo, para meter as letras para a label,tudo o resto, está bom I guess - David
@@ -91,6 +92,12 @@ public class Principal {
 		 */
 	}
 	
+	public static String changeCharInPosition(int position, char ch, String str){
+	    char[] charArray = str.toCharArray();
+	    charArray[position] = ch;
+	    return new String(charArray);
+	}
+	
 	
 	public static void Ganhar(){
 		
@@ -128,7 +135,7 @@ public class Principal {
 		int lenght = palavraGerada.length();
 		for (int i=0;i<lenght ;i++){
 			
-			lbl_Palavra.setText(lbl_Palavra.getText()+"_ ");
+			lbl_Palavra.setText(lbl_Palavra.getText()+"_");
 			
 		}
 		
