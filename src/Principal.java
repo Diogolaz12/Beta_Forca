@@ -21,7 +21,7 @@ public class Principal {
 	
 
 
-	public static void Verificar(JTextField txtLetra,JLabel cabeca,JLabel tronco,JLabel pernas,JLabel lbl_Palavra){
+	public static void Verificar(JTextField txtLetra,JLabel cabeca,JLabel tronco,JLabel pernas,JLabel lbl_Palavra, JLabel lbl_Ganhou){
 
 		String word = txtLetra.getText();
 
@@ -30,16 +30,16 @@ public class Principal {
 			
 			//Se for palavra
 			if(word.length()>1){
-				if(word==palavraGerada){
+				if(word.equals(palavraGerada)){
 					lbl_Palavra.setText(palavraGerada);
 					System.out.println("Parabens,ganhou!");
 					//Palavras iguais, label fica com a palavra completa
-					Ganhar(); // Verifica se perde
+					Ganhar(lbl_Ganhou, lbl_Palavra); // Verifica se perde
 				}
 				else{
 					letrasErradas++;
 					Vivo(cabeca,tronco,pernas);
-					Ganhar(); // Verifica se ganha
+					Ganhar(lbl_Ganhou, lbl_Palavra); // Verifica se ganha
 				}
 			}
 			
@@ -60,22 +60,20 @@ public class Principal {
 					 * 
 					 * 
 					 */
-				
-				
 				}
 				
 			}
 				if(palavraGerada.contains(txtLetra.getText()))
 				{
 					letrasCertas++;
-					Ganhar(); // Verifica se perde
+					Ganhar(lbl_Ganhou, lbl_Palavra); // Verifica se perde
 				}
 				else{
 					TodasLetras.add(txtLetra.getText());
 					letrasErradas++;
 					System.out.println();
 					Vivo(cabeca,tronco,pernas);
-					Ganhar(); // Verifica se ganha
+					Ganhar(lbl_Ganhou, lbl_Palavra); // Verifica se ganha
 				}
 		}
 		}
@@ -105,9 +103,16 @@ public class Principal {
 	}
 	
 	
-	public static void Ganhar(){
+	public static void Ganhar(JLabel lbl_Ganhou, JLabel lbl_Palavra){
 		
-		//Para o Sérgio
+		if(letrasErradas==3){
+			lbl_Ganhou.setText("Perdeu estuda-se Medicina!");
+		}
+		
+		else if (palavraGerada.equals(lbl_Palavra.getText()))
+				{
+			lbl_Ganhou.setText("Ganhou Parabéns!");
+		}
 		
 		
 		

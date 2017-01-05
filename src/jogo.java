@@ -26,7 +26,7 @@ public class jogo extends JFrame {
 	private JLabel lbl_tronco;
 	private JLabel lbl_pernas;
 	private JLabel lbl_cabeca;
-
+	private JLabel lbl_ganhou;
 	/**
 	 * Launch the application.
 	 */
@@ -48,7 +48,7 @@ public class jogo extends JFrame {
 	 */
 	public jogo() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 478, 398);
+		setBounds(100, 100, 546, 428);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -64,7 +64,7 @@ public class jogo extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				
 
-				Principal.Verificar( txtLetra, lbl_cabeca, lbl_tronco, lbl_pernas, lbl_Palavra);
+				Principal.Verificar( txtLetra, lbl_cabeca, lbl_tronco, lbl_pernas, lbl_Palavra,lbl_ganhou);
 
 			}
 		});
@@ -77,7 +77,7 @@ public class jogo extends JFrame {
 		txtLetra.setColumns(10);
 		
 		lbl_Palavra = new JLabel("");
-		lbl_Palavra.setBounds(268, 86, 184, 27);
+		lbl_Palavra.setBounds(268, 86, 209, 27);
 		contentPane.add(lbl_Palavra);
 		
 		Principal.Gerar(lbl_Palavra);
@@ -99,5 +99,9 @@ public class jogo extends JFrame {
 		lbl_pernas.setIcon(new ImageIcon(jogo.class.getResource("/images/legs.png")));
 		lbl_pernas.setBounds(170, 237, 56, 53);
 		contentPane.add(lbl_pernas);
+		
+		lbl_ganhou = new JLabel("");
+		lbl_ganhou.setBounds(268, 137, 224, 27);
+		contentPane.add(lbl_ganhou);
 	}
 }
