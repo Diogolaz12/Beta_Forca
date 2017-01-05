@@ -77,7 +77,7 @@ public class jogo extends JFrame {
 		txtLetra.setColumns(10);
 		
 		lbl_Palavra = new JLabel("");
-		lbl_Palavra.setBounds(268, 86, 154, 27);
+		lbl_Palavra.setBounds(268, 86, 184, 27);
 		contentPane.add(lbl_Palavra);
 		
 		Principal.Gerar(lbl_Palavra);
