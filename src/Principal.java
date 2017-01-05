@@ -1,4 +1,6 @@
 
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -7,7 +9,7 @@ import javax.swing.JTextField;
 
 public class Principal {
 
-	static String[] listaPalavras = {"software","engenharia","linux", "processador","ram","penacova","windows","linux","osx","budificil"};
+	static String[] listaPalavras = {"software","engenharia","linux","ram","penacova","windows","linux","osx","budificil"};
 	String letra;
 	static Random gerarpalavra = new Random();
 	static String palavraGerada;
@@ -21,9 +23,24 @@ public class Principal {
 	
 
 
+	
 	public static void Verificar(JTextField txtLetra,JLabel cabeca,JLabel tronco,JLabel pernas,JLabel lbl_Palavra, JLabel lbl_Ganhou){
 
+		
 		String word = txtLetra.getText();
+		
+		txtLetra.addKeyListener(new KeyAdapter() {
+
+			  public void keyTyped(KeyEvent e) {
+			    char keyChar = e.getKeyChar();
+			    if (Character.isUpperCase(keyChar)) {
+			      e.setKeyChar(Character.toLowerCase(keyChar));
+			    }
+			  }
+
+			});
+
+		
 
 		
 		if(!(TodasLetras.contains(txtLetra.getText())) && !(txtLetra.getText().equals(""))){
@@ -143,5 +160,7 @@ public class Principal {
 		}
 		
 	}
+	
+	
 
 }
