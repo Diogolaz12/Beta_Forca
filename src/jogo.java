@@ -59,7 +59,7 @@ public class jogo extends JFrame {
 		lbl_forca.setBounds(12, 86, 231, 274);
 		contentPane.add(lbl_forca);
 		
-		btnBtn = new JButton("BTN");
+		btnBtn = new JButton("Adivinhar");
 		btnBtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
@@ -68,11 +68,11 @@ public class jogo extends JFrame {
 
 			}
 		});
-		btnBtn.setBounds(146, 41, 81, 37);
+		btnBtn.setBounds(184, 41, 121, 37);
 		contentPane.add(btnBtn);
 		
 		txtLetra = new JTextField();
-		txtLetra.setBounds(94, 46, 40, 27);
+		txtLetra.setBounds(53, 46, 121, 27);
 		contentPane.add(txtLetra);
 		txtLetra.setColumns(10);
 		

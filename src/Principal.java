@@ -7,7 +7,7 @@ import javax.swing.JTextField;
 
 public class Principal {
 
-	static String[] listaPalavras = {"Software","Engenharia","Linux", "Processador","RAM","Penacova"};
+	static String[] listaPalavras = {"software","engenharia","linux", "processador","ram","penacova","windows","linux","osx","budificil"};
 	String letra;
 	static Random gerarpalavra = new Random();
 	static String palavraGerada;
@@ -26,13 +26,12 @@ public class Principal {
 		String word = txtLetra.getText();
 
 		
-		if(!(TodasLetras.contains(txtLetra.getText())) && txtLetra.getText()!=""){
+		if(!(TodasLetras.contains(txtLetra.getText())) && !(txtLetra.getText().equals(""))){
 			
 			//Se for palavra
 			if(word.length()>1){
 				if(word.equals(palavraGerada)){
 					lbl_Palavra.setText(palavraGerada);
-					System.out.println("Parabens,ganhou!");
 					//Palavras iguais, label fica com a palavra completa
 					Ganhar(lbl_Ganhou, lbl_Palavra); // Verifica se perde
 				}
@@ -45,26 +44,18 @@ public class Principal {
 			
 			// Se for só uma letra
 			else{
-				StringBuilder sb = new StringBuilder(palavraGerada);
-				char letter = txtLetra.getText().charAt(0);
-				for (int i=0;i<palavraGerada.length() ;i++){
-
-				if(palavraGerada.charAt(i) ==txtLetra.getText().charAt(0)){
-					
-
-					lbl_Palavra.setText(lbl_Palavra.getText().substring(0,i)+ palavraGerada.charAt(i) + lbl_Palavra.getText().substring(i+1));
-					/*
-					 * 
-					 * Mete aqui o codigo, para meter as letras para a label,tudo o resto, está bom I guess - David
-					 * 
-					 * 
-					 * 
-					 */
+				//StringBuilder sb = new StringBuilder(palavraGerada);
+				//char letter = txtLetra.getText().charAt(0);
+				for (int i=0;i<palavraGerada.length() ;i++)
+				{
+					if(palavraGerada.charAt(i) ==txtLetra.getText().charAt(0)){
+						lbl_Palavra.setText(lbl_Palavra.getText().substring(0,i)+ palavraGerada.charAt(i) + lbl_Palavra.getText().substring(i+1));
+						
+					}
 				}
-				
-			}
 				if(palavraGerada.contains(txtLetra.getText()))
 				{
+					txtLetra.setText("");
 					letrasCertas++;
 					Ganhar(lbl_Ganhou, lbl_Palavra); // Verifica se perde
 				}
@@ -107,6 +98,7 @@ public class Principal {
 		
 		if(letrasErradas==3){
 			lbl_Ganhou.setText("Perdeu estuda-se Medicina!");
+			lbl_Palavra.setText("A palavra era "+palavraGerada);
 		}
 		
 		else if (palavraGerada.equals(lbl_Palavra.getText()))
