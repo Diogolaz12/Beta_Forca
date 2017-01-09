@@ -16,13 +16,12 @@ import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 import javax.swing.ImageIcon;
 
-public class jogo extends JFrame {
+public class Jogo extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField txtLetra;
-	private static JLabel lbl_Palavra;
+	private static JLabel lbl_Palavra,lbl_forca;
 	private JButton btnBtn ;
-	private JLabel lbl_forca;
 	private JLabel lbl_tronco;
 	private JLabel lbl_pernas;
 	private JLabel lbl_cabeca;
@@ -34,7 +33,7 @@ public class jogo extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					jogo frame = new jogo();
+					Jogo frame = new Jogo();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -46,7 +45,7 @@ public class jogo extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public jogo() {
+	public Jogo() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 546, 428);
 		contentPane = new JPanel();
@@ -55,7 +54,7 @@ public class jogo extends JFrame {
 		contentPane.setLayout(null);
 		
 		lbl_forca = new JLabel("");
-		lbl_forca.setIcon(new ImageIcon(jogo.class.getResource("/images/forca.PNG")));
+		lbl_forca.setIcon(new ImageIcon(Jogo.class.getResource("/images/forca.PNG")));
 		lbl_forca.setBounds(12, 86, 231, 274);
 		contentPane.add(lbl_forca);
 		
@@ -84,19 +83,19 @@ public class jogo extends JFrame {
 		
 		lbl_cabeca = new JLabel("");
 		lbl_cabeca.setVisible(false);
-		lbl_cabeca.setIcon(new ImageIcon(jogo.class.getResource("/images/head.png")));
+		lbl_cabeca.setIcon(new ImageIcon(Jogo.class.getResource("/images/head.png")));
 		lbl_cabeca.setBounds(170, 150, 57, 53);
 		contentPane.add(lbl_cabeca);
 		
 		lbl_tronco = new JLabel("");
 		lbl_tronco.setVisible(false);
-		lbl_tronco.setIcon(new ImageIcon(jogo.class.getResource("/images/chest.png")));
+		lbl_tronco.setIcon(new ImageIcon(Jogo.class.getResource("/images/chest.png")));
 		lbl_tronco.setBounds(156, 195, 81, 42);
 		contentPane.add(lbl_tronco);
 		
 		lbl_pernas = new JLabel("");
 		lbl_pernas.setVisible(false);
-		lbl_pernas.setIcon(new ImageIcon(jogo.class.getResource("/images/legs.png")));
+		lbl_pernas.setIcon(new ImageIcon(Jogo.class.getResource("/images/legs.png")));
 		lbl_pernas.setBounds(170, 237, 56, 53);
 		contentPane.add(lbl_pernas);
 		
